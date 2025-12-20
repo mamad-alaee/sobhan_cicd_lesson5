@@ -17,6 +17,12 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.13"
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
       - name: installing dependencies
         run: |
           python -m pip install --upgrade pip
@@ -36,6 +42,12 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.13"
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
       - name: installing dependencies
         run: |
           python -m pip install --upgrade pip
@@ -53,6 +65,12 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.13"
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
       - name: installing dependencies
         run: |
           python -m pip install --upgrade pip
