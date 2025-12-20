@@ -13,6 +13,6 @@ def read_root():
 def read_book(book_id: int):
     if book_id > 10:
         raise HTTPException(
-            status_code=403,
+            status_code=404,
             detail="Book not found")
     return {"book_id": book_id}
