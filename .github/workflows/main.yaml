@@ -27,6 +27,7 @@ jobs:
           pytest -v
           echo "pytest ended"
   build:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
