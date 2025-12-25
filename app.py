@@ -3,7 +3,7 @@ from fastapi import FastAPI,HTTPException
 
 app = FastAPI()
 
-
+code = 200
 
 @app.get("/")
 def read_root():
