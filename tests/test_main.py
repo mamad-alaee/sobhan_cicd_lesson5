@@ -1,5 +1,7 @@
 import sys, os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from os import getcwd,makedirs
+from os.path import join,exists
 
 from fastapi.testclient import TestClient
 from app import app
@@ -20,3 +22,6 @@ def test_read_book_not_found():
     res = client.get("/book/11")
     assert res.status_code == 404
     assert res.json() == {"detail": "Book not found"}
+    save_artifact_path = join(getcwd(),"test_result.txt")
+    with open(save_artifact_path,"w") as f:
+        f.write("test_done")
