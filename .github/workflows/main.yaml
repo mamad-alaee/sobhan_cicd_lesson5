@@ -8,11 +8,12 @@ on:
   workflow_dispatch:
 
 env:
-  PORT: 8000
+  PORT: ${{ secrets.PORT }}
 jobs:
   test:
+    environment: test_env
     env:
-      PORT: 7000
+      PORT: ${{secrets.PORT}}
       PASSWORD: "tak_navazan"
     runs-on: ubuntu-latest
     steps:
