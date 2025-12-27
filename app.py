@@ -9,6 +9,7 @@ code = 200
 def read_root():
     return {"Hello": "World"}
 
+# gozoo
 @app.get("/book/{book_id}")
 def read_book(book_id: int):
     if book_id > 10:
